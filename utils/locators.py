@@ -17,7 +17,7 @@ class YaScooterHomePageLocator:
     @staticmethod
     def FAQ_QUESTION_BUTTON(question_number):
         """Возвращает локатор кнопки с вопросом FAQ (нумерация сверху вниз)"""
-        return (By.XPATH, f".//div[@class='accordion__button' and @id='accordion__heading-{question_number}']")
+        return By.XPATH, f".//div[@class='accordion__button' and @id='accordion__heading-{question_number}']"
 
     @staticmethod
     def FAQ_ANSWER(answer_number):
@@ -25,7 +25,7 @@ class YaScooterHomePageLocator:
         Возвращает локатор дива с ответом FAQ (нумеерация сверху вниз).
         Сами тексты ответов находятся в utils/test_data.py
         """
-        return (By.XPATH, f".//div[@class='accordion__panel' and @id='accordion__panel-{answer_number}']/p")
+        return By.XPATH, f".//div[@class='accordion__panel' and @id='accordion__panel-{answer_number}']/p"
 
 class YaScooterOrderPageLocator:
     FIRST_NAME_INPUT = (By.XPATH, ".//input[contains(@placeholder,'Имя')]")
@@ -39,7 +39,7 @@ class YaScooterOrderPageLocator:
 
     @staticmethod
     def SUBWAY_HINT_BUTTON(subway_name: str):
-        return (By.XPATH, f".//div[text()='{subway_name}']/parent::button")
+        return By.XPATH, f".//div[text()='{subway_name}']/parent::button"
 
     TELEPHONE_NUMBER_FIELD = (By.XPATH, ".//input[contains(@placeholder,'Телефон')]")
     INCORRECT_TELEPHONE_NUMBER_MESSAGE = (By.XPATH, ".//input[contains(@placeholder,'Телефон')]/parent::div/div")
