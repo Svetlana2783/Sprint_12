@@ -1,19 +1,7 @@
 import pytest
 import allure
-from utils.urls import Urls
-from pages.home_page import YaScooterHomePage
-from pages.order_page import YaScooterOrderPage
 from utils.locators import YaScooterOrderPageLocator
 from utils.test_data import YaScooterOrderPageData as order_data
-
-@pytest.fixture(scope="function")
-def setup_method(driver):
-    ya_scooter_order_page = YaScooterOrderPage(driver)
-    ya_scooter_order_page.go_to_site(Urls.ORDER_PAGE)
-    ya_scooter_home_page = YaScooterHomePage(driver)
-    ya_scooter_home_page.click_cookie_accept()
-    yield ya_scooter_order_page
-    driver.quit()
 
 @allure.epic('Эпик_Создание заказа')
 @allure.parent_suite('Parent_suite_Создание заказа')
